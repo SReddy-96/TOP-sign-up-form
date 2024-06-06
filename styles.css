@@ -7,6 +7,7 @@
 
 :root {
     --font-size: 1rem;
+    --box-shadow: 0px 0px 2px hsl(0, 0%, 60%);
 }
 
 * {
@@ -31,8 +32,8 @@ main {
     width: 80%;
     height: 80vh;
     margin-top: 4rem;
-    border: 1px solid lightblue;
-    box-shadow: 0px 0px 3px lightblue;
+    border: 1px solid hsl(0, 0%, 60%);
+    box-shadow: var(--box-shadow);
 
 }
 
@@ -46,10 +47,6 @@ main {
     text-align: center;
 }
 
-#form-section {
-    width: 70%
-}
-
 #logo {
     font-size: calc(var(--font-size)*2);
     margin-top: 20%;
@@ -57,7 +54,101 @@ main {
     color: whitesmoke;
 }
 
-#img-ref {
+#img-ref,
+a {
     position: relative;
-    top: 60%;
+    top: 65%;
+    font-size: calc(var(--font-size)/2);
+    color: inherit;
+}
+
+#form-section {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: var(--font-size);
+    background-color: hsl(195, 53%, 98%);
+}
+
+.form-div {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid lightblue;
+    border-bottom: 1px solid lightblue;
+    padding: var(--font-size);
+    margin: 0 -1rem 0 -1rem;
+    box-shadow: var(--box-shadow);
+    background-color: hsl(0, 0%, 100%);
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: calc(var(--font-size)/2)
+}
+
+.form-row input[type='text'],
+.form-row input[type='password'],
+.form-row input[type='email'],
+.form-row input[type='tel'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 4px;
+    font-size: var(--font-size);
+}
+
+.form-row input:focus {
+    border: 1px solid #76AEED !important;
+    box-shadow: var(--box-shadow);
+    outline: none;
+}
+
+.form-row input:invalid {
+    border: 1px solid #D55C5F;
+    color: #D55C5F;
+    box-shadow: none;
+}
+
+.left-form {
+    float: left;
+    margin: 0 2rem 0 0;
+}
+
+
+.right-form {
+    float: right;
+    margin: 0 0 0 2rem;
+
+}
+
+input[type="submit"] {
+    /* font-size: ; */
+    font-weight: bold;
+
+    color: #FFFFFF;
+    background-color: #5995DA;
+
+    border: none;
+    border-radius: 3px;
+
+    padding: 10px 40px;
+    cursor: pointer;
+
+    margin-bottom: var(--font-size)
+}
+
+input[type="submit"]:hover {
+    background-color: #76AEED;
+}
+
+.section-div>p>a {
+    font-size: var(--font-size);
+    text-decoration: none;
+    font-weight: bold;
+    color: #5995DA;
 }
